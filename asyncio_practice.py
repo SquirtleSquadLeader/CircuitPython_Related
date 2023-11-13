@@ -1,18 +1,18 @@
 """
-M4 Feather Can Express
-Ethernet Featherwing
+
+Author: SquirtleSquadLeader
+
+Hardware: Adafruit M4 Feather Can Express
+
+Loop 2 seperate functions utilizing asyncio.  My intent is to replace these functions with more complex logic.  
 
 """
 
-import time
+
+# Imports
 import board
-import neopixel
 import asyncio
 import digitalio
-import rotaryio
-
-from micropython import const
-from adafruit_seesaw.seesaw import Seesaw
 from adafruit_ticks import ticks_ms, ticks_add, ticks_less, ticks_diff
 
 # Configure LED pin
@@ -32,8 +32,6 @@ async def main(led):
     # Set start of frame
     start_blink = ticks_ms()
     start_print = ticks_ms()
-    
-    loop = asyncio.core.get_event_loop()
         
     while True:    
         if ticks_diff(ticks_ms(), start_print ) > 1000:
@@ -46,19 +44,5 @@ async def main(led):
         
         await asyncio.core.sleep(0)
         
-asyncio.core.run(main(led))
-
-
-
-        
-"""
-need to code:
-
-    while one task is still alive.... generate another blink
-"""
-     
-    
-                                   
-    
-
+asyncio.core.run(main(led))   
     
