@@ -3,7 +3,7 @@
 Author: SquirtleSquadLeader
 
 Purpose: Execute 2 seperate functions at given time intervals untilizing async.
-         Replace the codes within function_1 and function_2 as desired to 
+         Replace the code within function_1 and function_2 as desired to 
          repurpose this.  For example, blink an LED or transmit some data via 
          UART.  
 
