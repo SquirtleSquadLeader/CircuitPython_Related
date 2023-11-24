@@ -28,19 +28,24 @@ async def function_2(led):
     await asyncio.core.sleep(0)
 
 async def main(led):
+
+    # Desired time delays in milliseconds
+    delay_1 = 1000
+    delay_2 = 100
+    
     # Set start of frame
     start_function_1 = ticks_ms()
     start_function_2 = ticks_ms()    
         
     while True:    
-        if ticks_diff(ticks_ms(), start_print ) > 1000:
+        if ticks_diff(ticks_ms(), start_print ) > delay_1:
             start_print = ticks_ms()
             asyncio.core.create_task(function_1())
             
-        if ticks_diff(ticks_ms(), start_function_2) > 100:
+        if ticks_diff(ticks_ms(), start_function_2) > delay_2:
             start_function_2 = ticks_ms()
             asyncio.core.create_task(function_2(led))
         
         await asyncio.core.sleep(0)
         
-asyncio.core.run(main(led))   
+asyncio.core.run(main(led)) 
